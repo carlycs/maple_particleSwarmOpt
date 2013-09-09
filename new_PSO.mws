@@ -1,0 +1,292 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "" 0 21 "" 0 1 0 0 0 1 0 0 0 0 2 0 0 0 0 1 }{PSTYLE "Normal" 
+-1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "
+Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 4 1 0 1 0 2 2 0 1 }
+{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 
+2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{SECT 0 {PARA 3 
+"" 0 "" {TEXT -1 5 "input" }}{EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 25 "
+How many ply do we have?;" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 6 
+"s1:=8:" }}}{EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 16 "half of particle
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "f:=150:" }}}{EXCHG 
+{PARA 0 "" 0 "" {MPLTEXT 0 21 10 "iterations" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 14 "iterations:=3:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "mki:=0:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "
+for bmq from 1 to 2*f do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "D_f1(bm
+q):=0:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "D_A1(bmq):=0:" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 13 "D_B1(bmq):=0:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "end do:" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 22 "Init
+ial Particle Angle" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "for i from 1 to f do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "for kre from 1 to s1 do" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 24 "a(i)(kre):=rand(10..90):" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 39 "b(i)(kre):=convert(a(i)(kre)(),base,2);" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 41 "kw(i)(kre):=convert(b(i)(kre),base,2,10);
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "g(i)(kre):=kw(i)(kre)[1]+kw(i)(
+kre)[2]*10;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 47 "g(i+f)(kre):=-(kw(i)
+(kre)[1]+kw(i)(kre)[2]*10);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "end d
+o :" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "end do :" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+25 "for dwwq from 1 to 4*f do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "an
+gle_matrix(dwwq):=Array(1..1,1..s1);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 7 "end do:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "for bm from 1 to 2*f do" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 24 "for kree from 1 to s1 do" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 32 "number1(bm)(kree):=rand(1..2*f):" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 32 "frr1(kree):=number1(bm)(kree)();" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "angle_ma
+trix(bm)[1,kree]:=g(frr1(kree))(kree);" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 8 "end do :" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "end do: " }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "angle_matrix(2);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#-%'RTABLEG6%\")[U/j-%'MATRIXG6#7#7*!#d!#u\"#
+R!#F!#R\"#L!#U!#o%&ArrayG" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 24 "In
+itial Particle Fitness" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "" 0 "
+" {MPLTEXT 0 21 19 "fitness evaluation;" }}}{EXCHG {PARA 0 "" 0 "" 
+{MPLTEXT 0 21 16 "and sort fitness" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 20 "with(LinearAlgebra):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 10 "with(MTM):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+24 "for dww from 1 to 2*f do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "f_I
+I(dww):=Array(1..s1,1..1);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do
+:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "for dww2 from 1 to 2*f
+ do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "for pj from 1 to s1 do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "f_II(dww2)[pj,1]:=F_I(pj)(dww2):" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "v(pj)(dww2):=0;" }}{PARA 0 "> " 0 
+"" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do
+:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 10 "gfd:=s1-1:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 25 "for dww2 from 1 to 2*f do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "for st from 1 to s1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 23 "for it from 1 to gfd do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "
+if F_I(it)(dww2) <= F_I(it+1)(dww2) then" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 32 "F_II(it)(dww2):=F_I(it+1)(dww2);" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 31 "F_I(it+1)(dww2):=F_I(it)(dww2);" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "F_II(it)(
+dww2):=F_I(it)(dww2);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end if:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "for gw from 1 to gfd do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 30 "F_I(gw)(dww2):=F_II(gw)(dww2);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "if F_I(1)(dww2) <= -F_I(s1)(dww2)
+ then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "F_I(1)(dww2):=F_I(s1)(dww2
+);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 27 "F_I(1)(dww2):=F_I(1)(dww2);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "end if:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" 
+}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "for stq from 1 to 2*f do
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "F_III(1)(stq):=F_I(1)(stq);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 12 "gfdd:=2*f-1:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 7 "fti:=0:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "for stt f
+rom 1 to 2*f do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "for itt from 1 t
+o gfdd do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 101 "if (fti > F_III(1)(it
+t)) then F_III(1)(itt):=-F_III(1)(itt); else F_III(1)(itt)=F_III(1)(it
+t);end if;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "if F_III(1)(itt) >= F
+_III(1)(itt+1) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "F_II(1)(itt)
+:=F_III(1)(itt+1);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "rto(itt):=F_I
+(1)(itt+1):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "rt(itt):=angle_matri
+x(itt+1):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "F_III(1)(itt+1):=F_III
+(1)(itt);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "angle_matrix(itt+1):=a
+ngle_matrix(itt):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "F_I(1)(itt+1):
+=F_I(1)(itt):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 28 "F_II(1)(itt):=F_III(1)(itt);" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 22 "rto(itt):=F_I(1)(itt):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 27 "rt(itt):=angle_matrix(itt):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "end if:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "for gww from 1 to gfdd do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "F_III(1)(gww):=F_II(1)(gww);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "angle_matrix(gww):=rt(gww):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "F_I(1)(gww):=rto(gww):" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "
+end do:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 27 "Particle swarm optimization" }}{EXCHG 
+{PARA 0 "" 0 "" {MPLTEXT 0 21 10 "iterations" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 24 "for sty from 1 to 2*f do" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "for ae from 1 to s1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 40 "pbest(ae)(sty):=angle_matrix(sty)[1,ae];" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" 
+}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "for kll from 1 to iterati
+ons do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "for sty from 1 to 2*f do
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "for ae from 1 to s1 do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "gbest(ae):=angle_matrix(1)[1,ae];" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "p_current(ae)(sty):=angle_matrix(
+sty)[1,ae];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "
+for styy from 1 to 2*f do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "for ae
+e from 1 to s1 do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "numberr1(bm):=
+rand(0..10):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "numberr2(bm):=rand(
+0..10):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 162 "v_1(aee)(styy):=0.75*v(
+aee)(styy)+1*evalf(numberr1(bm)()/10)*(pbest(aee)(styy)-p_current(aee)
+(styy))+1*evalf(numberr2(bm)()/10)*(gbest(aee)-p_current(aee)(styy));
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 58 "p_current(aee)(styy):=p_current
+(aee)(styy)+v_1(aee)(styy):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "angl
+e_matrix(styy+2*f)[1,aee]:=evalf(p_current(aee)(styy),4);" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 43 "if 90 <= angle_matrix(styy+2*f)[1,aee] then
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "angle_matrix(styy+2*f)[1,aee]:=
+90;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 61 "angle_matrix(styy+2*f)[1,aee]:=angle_matrix(styy+2*f)
+[1,aee];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end if:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 44 "if angle_matrix(styy+2*f)[1,aee] <= -90 then" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "angle_matrix(styy+2*f)[1,aee]:=-90;
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 61 "angle_matrix(styy+2*f)[1,aee]:=angle_matrix(styy+2*f)
+[1,aee];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end if:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end \+
+do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "for styy from 1 to 2*f do" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "for gtse from 1 to s1 do" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 63 "angle_matrix(styy+2*f)[1,gtse]:=angle_mat
+rix(styy+2*f)[1,gtse];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+28 "for dww from 2*f+1 to 4*f do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 
+"f_II(dww):=Array(1..s1,1..1);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "en
+d do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "for dww2 from 2*f+1 to 4*f
+ do" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "for pj from 1 to s1 do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "f_II(dww2)[pj,1]:=F_I(pj)(dww2):" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "gfd:=s1-
+1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "for dww2 from 1 to 4*f do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "for st from 1 to s1 do" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 23 "for it from 1 to gfd do" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 40 "if F_I(it)(dww2) <= F_I(it+1)(dww2) then" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 32 "F_II(it)(dww2):=F_I(it+1)(dww2);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "F_I(it+1)(dww2):=F_I(it)(dww2);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 30 "F_II(it)(dww2):=F_I(it)(dww2);" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 7 "end if:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 23 "for gw from 1 to gfd do" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 30 "F_I(gw)(dww2):=F_II(gw)(dww2);" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end \+
+do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "if F_I(1)(dww2) <= -F_I(s1)(
+dww2) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "F_I(1)(dww2):=F_I(s1)
+(dww2);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 27 "F_I(1)(dww2):=F_I(1)(dww2);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 7 "end if:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "for stq from 1 to 4*f do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "F_III(1)(stq):=F_I(1)(stq);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 12 "gfdd:=4*f-1:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "fti
+:=0:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "for stt from 1 to 4*f do" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "for itt from 1 to gfdd do" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 101 "if (fti > F_III(1)(itt)) then F_II
+I(1)(itt):=-F_III(1)(itt); else F_III(1)(itt)=F_III(1)(itt);end if;" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "if F_III(1)(itt) >= F_III(1)(itt+1
+) then" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "F_II(1)(itt):=F_III(1)(it
+t+1);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "rto(itt):=F_I(1)(itt+1):" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "rt(itt):=angle_matrix(itt+1):" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "F_III(1)(itt+1):=F_III(1)(itt);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "angle_matrix(itt+1):=angle_matrix(i
+tt):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "F_I(1)(itt+1):=F_I(1)(itt):
+" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 4 "else" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "F_II(1)(itt):=F_III(1)(itt);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "rto(itt):=F_I(1)(itt):" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 27 "rt(itt):=angle_matrix(itt):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+7 "end if:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 26 "for gww from 1 to 4*f-2 do" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 28 "F_III(1)(gww):=F_II(1)(gww);" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 27 "angle_matrix(gww):=rt(gww):" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "F_I(1)(gww):=rto(gww):" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 7 "end do:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 29 "v(aee)(styy):=v_1(aee)(styy):" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 7 "end do:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 21 "for h from 1 to 10 do" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 17 "print(F_I(1)(h));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "print(
+angle_matrix(h));" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "end do:" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+vcPfI!#5" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#-%'RTABLEG6%\"*#H[*\\\"-%'MATRIXG6#7#7*$!%SH!\"#$\"%svF
+.$\"%cYF.$\"%kcF.$!%oXF.$!%L?F.$!%:cF.\"#!*%&ArrayG" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#$\"+/KBCJ!#5" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'RT
+ABLEG6%\"*oZ!f6-%'MATRIXG6#7#7*$!%7G!\"#$\"%,oF.$!%CyF.$\"%oGF.$\"%'\\
+(F.$!%XCF.$!%G%)F.$!%+MF.%&ArrayG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$
+\"+vmh]L!#5" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'RTABLEG6%\"*%ex2:-%'
+MATRIXG6#7#7*$\"%qr!\"$$\"%+')!\"#$!%DrF1$\"%+YF1$\"%!4)F1$!%0OF1$!%v=
+F1$\"%v$)F1%&ArrayG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+L7#)=M!#5" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'RTABLEG6%\"*Gda^\"-%'MATRIXG6#7#7
+*$!%#f\"!\"#$\"%o`F.$!%K]F.!#!*$!%&*zF.$\"%j7F.$!%1\\F.$\"%FcF.%&Array
+G" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+'HkV^$!#5" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#-%'RTABLEG6%\"*Ox4]\"-%'MATRIXG6#7#7*$\"%+^!\"$$\"%+'
+)!\"#$!%sbF1$\"%?PF1$\"%?XF1$!%-FF1$!%OrF1$\"%qSF1%&ArrayG" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#$\"+08)ou$!#5" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#-%'RTABLEG6%\"*kBR]\"-%'MATRIXG6#7#7*$!%!Q%!\"#$\"%+^F.$!#T\"\"!
+$\"%![&F.$!%S7F.$\"%gdF.$!%!>$F.$!#qF3%&ArrayG" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"+MbV_P!#5" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'RTAB
+LEG6%\"*o%)>^\"-%'MATRIXG6#7#7*$!%pw!\"#$\"%NKF.$!%\"p\"F.$\"%!)=F.$\"
+%M_F.$!%W$)F.$!%+c!\"&\"#!*%&ArrayG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+#$\"+P:I;Q!#5" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'RTABLEG6%\"*[hj:\"
+-%'MATRIXG6#7#7*$!%uD!\"#$\"%znF.$!%y^F.$\"%#*yF.$\"%\\TF.$!%WgF.$!%jf
+F.\"#!*%&ArrayG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+*oD@%Q!#5" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'RTABLEG6%\"*;t+]\"-%'MATRIXG6#7#7*$
+!%[S!\"#$\"%eDF.$!%dlF.$\"%!y$F.$\"%!p)F.$\"%OtF.$!%wBF.$!%!Q%F.%&Arra
+yG" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+3(pw%Q!#5" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#-%'RTABLEG6%\"*)oZ\\6-%'MATRIXG6#7#7*$!%yF!\"#$\"%!y(
+F.$!%OiF.$\"%+lF.$\"%o^F.$!%9d!\"$$!%AlF.$!%'y%F.%&ArrayG" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 0 "" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}
+{MARK "1 1 0 0" 8 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 
+2 33 1 1 }{RTABLE_HANDLES 63044248 149948292 115904768 150777584 
+151545728 150097736 150392364 151198468 115636148 150007316 114947688 
+}{RTABLE 
+M7R0
+I5RTABLE_SAVE/63044248X,%)anythingG6"6"[gl!!%!!!#)""")!#d!#u"#R!#F!#R"#L!#U!#oF
+&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/149948292X,%)anythingG6"6"[gl!!%!!!#)""")$!%SH!"#$"%svF)$"%cYF)$"
+%kcF)$!%oXF)$!%L?F)$!%:cF)"#!*F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/115904768X,%)anythingG6"6"[gl!!%!!!#)""")$!%7G!"#$"%,oF)$!%CyF)$"
+%oGF)$"%'\(F)$!%XCF)$!%G%)F)$!%+MF)F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/150777584X,%)anythingG6"6"[gl!!%!!!#)""")$"%qr!"$$"%+')!"#$!%DrF,
+$"%+YF,$"%!4)F,$!%0OF,$!%v=F,$"%v$)F,F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/151545728X,%)anythingG6"6"[gl!!%!!!#)""")$!%#f"!"#$"%o`F)$!%K]F)!
+#!*$!%&*zF)$"%j7F)$!%1\F)$"%FcF)F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/150097736X,%)anythingG6"6"[gl!!%!!!#)""")$"%+^!"$$"%+')!"#$!%sbF,
+$"%?PF,$"%?XF,$!%-FF,$!%OrF,$"%qSF,F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/150392364X,%)anythingG6"6"[gl!!%!!!#)""")$!%!Q%!"#$"%+^F)$!#T""!$
+"%![&F)$!%S7F)$"%gdF)$!%!>$F)$!#qF.F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/151198468X,%)anythingG6"6"[gl!!%!!!#)""")$!%pw!"#$"%NKF)$!%"p"F)$
+"%!)=F)$"%M_F)$!%W$)F)$!%+c!"&"#!*F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/115636148X,%)anythingG6"6"[gl!!%!!!#)""")$!%uD!"#$"%znF)$!%y^F)$"
+%#*yF)$"%\TF)$!%WgF)$!%jfF)"#!*F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/150007316X,%)anythingG6"6"[gl!!%!!!#)""")$!%[S!"#$"%eDF)$!%dlF)$"
+%!y$F)$"%!p)F)$"%OtF)$!%wBF)$!%!Q%F)F&
+}
+{RTABLE 
+M7R0
+I6RTABLE_SAVE/114947688X,%)anythingG6"6"[gl!!%!!!#)""")$!%yF!"#$"%!y(F)$!%OiF)$
+"%+lF)$"%o^F)$!%9d!"$$!%AlF)$!%'y%F)F&
+}
+

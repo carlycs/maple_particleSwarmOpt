@@ -1,0 +1,8 @@
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=0:30:00
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+module load maple
+maple <maple_test_01.txt > Output.txt
